@@ -1,0 +1,11 @@
+{
+  "name": "eksi-proxy",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "micro-proxy -r rules.json -p 9000"
+  },
+  "dependencies": {
+    "micro-proxy": "^1.1.0"
+  }
+}
