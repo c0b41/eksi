@@ -12,4 +12,4 @@ eksi.getAccessToken({
 }).then((response) => {
 	console.log(response.data)
 	console.log(response.status)
-}).catch(err => console.log)
+}).catch(err => console.log(err))

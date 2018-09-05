@@ -3,24 +3,22 @@
   "version": "1.0.0",
   "main": "./dist",
   "scripts": {
-    "prod": "webpack --mode=production",
-    "dev": "webpack --mode=development --watch",
-    "prepublishOnly": "npm run prod"
+    "prepublishOnly": "npm run build",
+    "build": "babel ./src --out-dir ./dist",
+    "docs": "jsdoc ./src/index.js -d docs"
   },
   "dependencies": {
     "axios": "^0.18.0"
   },
-  "engines": {
-    "node": ">=8"
-  },
   "devDependencies": {
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.5",
+    "babel-cli": "^6.26.0",
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
-    "webpack": "^4.16.5",
-    "webpack-cli": "^3.1.0"
+    "jsdoc": "^3.5.5"
+  },
+  "engines": {
+    "node": ">=8"
   },
   "license": "MIT"
 }
