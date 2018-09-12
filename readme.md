@@ -1,9 +1,23 @@
 ## Eskisozluk package
 
-Eksisözlüğün private api'sini kullanmak isteyenler için yazılmış node paketi.
+![npm](https://img.shields.io/npm/v/eksi.svg?style=flat-square)
+
+
+Eksi sözlüğün private api'sini kullanmak isteyenler için yazılmış node paketi.
 
 ```sh
 yarn add eksi
 ```
 
-# [Döküman](https://eksi-document.netlify.com/)
+Browser için 
+
+```https://unpkg.com/eksi@1.0.0/dist/index.js```
+
+Kullanım ve methodlar için
+
+### [Doküman](https://eksi-document.netlify.com/)
+
+
+
+
+*iletisim için cobaimelan@protonmail.ch*
