@@ -8,7 +8,8 @@
     "docs": "jsdoc ./src/index.js -d docs"
   },
   "dependencies": {
-    "axios": "^0.18.0"
+    "axios": "^0.18.0",
+    "query-string": "^6.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
