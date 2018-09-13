@@ -105,6 +105,40 @@ class EksiClient {
 		return await this.client.get(`${this.client_version}/user/${this.env.nick}/favorites`, { params })
 	}
 
+	/**
+     * Başka bir kullanıcıya ait verilere ulaşmak için
+	 * @async
+	 * @param nick {String} Kullanıcı Adı
+     * @param params {Object}
+     * @return {Promise}
+     */
+	async getUser(nick, params = {}) {
+		return await this.client.get(`${this.client_version}/user/${nick}`, { params })
+	}
+
+	/**
+     * Başka bir kullanıcıya ait entryleri erişmek için
+	 * @async
+	 * @param nick {String} Kullanıcı adı
+     * @param params {Object}
+	 * @param params.p {Number} Sayfa sayısı
+     * @return {Promise}
+     */
+	async getUserEntrys(nick, params = { p: 1 }) {
+		return await this.client.get(`${this.client_version}/user/${nick}/entries`, { params })
+	}
+
+	/**
+     * Başka bir kullanıcıya ait favorileri erişmek için
+	 * @async
+	 * @param nick {String} Kullanıcı adı
+     * @param params {Object}
+	 * @param params.p {Number} Sayfa sayısı
+     * @return {Promise}
+     */
+	async getUserFavorites(nick, params = { p: 1 }) {
+		return await this.client.get(`${this.client_version}/user/${nick}/favorites`, { params })
+	}
 
 	/**
      * Kendinize ait mesajlara erişmek için
