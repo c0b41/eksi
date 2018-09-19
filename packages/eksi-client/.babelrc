@@ -4,10 +4,16 @@
 	        "env",
 	        {
 	            "targets": {
-	                "browser": "last 2 versions"
-	            }
-	        }
+					"browser": "last 2 versions"
+				}
+			}
 	    ]
     ],
-    "plugins": ["add-module-exports"]
+	"plugins": ["add-module-exports", 
+		[ "transform-runtime",
+			{
+			"regenerator": true
+			}
+		]
+	]
 }
