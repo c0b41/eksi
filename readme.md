@@ -1,6 +1,7 @@
 ## Eskisozluk package
 
 ![npm](https://img.shields.io/npm/v/eksi.svg?style=flat-square)
+[![install size](https://packagephobia.now.sh/badge?p=eksi@1.1.1)](https://packagephobia.now.sh/result?p=eksi@1.1.1)
 
 
 Eksi sözlüğün private api'sini kullanmak isteyenler için yazılmış node paketi.
