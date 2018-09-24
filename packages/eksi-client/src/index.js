@@ -151,6 +151,26 @@ class EksiClient {
 	}
 
 	/**
+     * Kendinize ait okunmamış mesaj sayısı
+	 * @async
+     * @param params {Object}
+     * @return {Promise}
+     */
+	async getMyUnreadMessagesCount(params = {  }) {
+		return await this.client.get(`${this.client_version}/message/totalunreadthreadcount`, { params })
+	}
+
+	/**
+     * Takip edilen okunmamış konular'a ait okunmamış konu sayısı
+	 * @async
+     * @param params {Object}
+     * @return {Promise}
+     */
+	async getMyUnreadTopicsCount(params = {  }) {
+		return await this.client.get(`${this.client_version}/topic/unreadtopiccount`, { params })
+	}
+
+	/**
      * Konuya bugün girilen entrylere erişmek için
 	 * @async
      * @param params {Object}
