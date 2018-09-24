@@ -12,7 +12,7 @@ yarn add eksi
 
 Browser için 
 
-```https://unpkg.com/eksi@1.2.0/dist/index.js```
+```https://unpkg.com/eksi@1.2.1/dist/index.js```
 
 Kullanım ve methodlar için
 
