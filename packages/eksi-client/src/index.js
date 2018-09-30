@@ -130,6 +130,96 @@ class EksiClient {
   }
 
   /**
+   * Kullanıcı engelleme
+   * @async
+   * @param nick {String} Kullanıcı Adı
+   * @param params {Object}
+   * @return {Promise}
+   */
+  async setUserBlock(nick, params = {}) {
+    return await this.client.get(`${this.client_version}/user/${nick}/block`, {
+      params
+    })
+  }
+
+  /**
+   * Kullanıcı engelli kaldırma
+   * @async
+   * @param nick {String} Kullanıcı Adı
+   * @param params {Object}
+   * @return {Promise}
+   */
+  async setUserUnblock(nick, params = {}) {
+    return await this.client.get(
+      `${this.client_version}/user/${nick}/unblock`,
+      {
+        params
+      }
+    )
+  }
+
+  /**
+   * Kullanıcı konularını engelleme
+   * @async
+   * @param nick {String} Kullanıcı Adı
+   * @param params {Object}
+   * @return {Promise}
+   */
+  async setUserTopicsBlock(nick, params = {}) {
+    return await this.client.get(
+      `${this.client_version}/user/${nick}/indextitlesblock`,
+      {
+        params
+      }
+    )
+  }
+
+  /**
+   * Kullanıcı konularını engeli kaldırma
+   * @async
+   * @param nick {String} Kullanıcı Adı
+   * @param params {Object}
+   * @return {Promise}
+   */
+  async setUserTopicsUnblock(nick, params = {}) {
+    return await this.client.get(
+      `${this.client_version}/user/${nick}/removeindextitlesblock`,
+      {
+        params
+      }
+    )
+  }
+
+  /**
+   * Kullanıcı takip et
+   * @async
+   * @param nick {String} Kullanıcı Adı
+   * @param params {Object}
+   * @return {Promise}
+   */
+  async setUserFollow(nick, params = {}) {
+    return await this.client.get(`${this.client_version}/user/${nick}/follow`, {
+      params
+    })
+  }
+
+  /**
+   * Kullanıcı takipden çıkar
+   * @async
+   * @param nick {String} Kullanıcı Adı
+   * @param params {Object}
+   * @return {Promise}
+   */
+  async setUserUnfollow(nick, params = {}) {
+    return await this.client.get(
+      `${this.client_version}/user/${nick}/unfollow`,
+      {
+        params
+      }
+    )
+  }
+
+  /**
    * Başka bir kullanıcıya ait entryleri erişmek için
    * @async
    * @param nick {String} Kullanıcı adı
@@ -166,8 +256,23 @@ class EksiClient {
    * @param params.p {Number} Sayfa sayısı
    * @return {Promise}
    */
-  async getMyMessages(params = { p: 1 }) {
+  async getMessages(params = { p: 1 }) {
     return await this.client.get(`${this.client_version}/message`, { params })
+  }
+
+  /**
+   * Mesajı getirmek için
+   * @async
+   * @param nick {String} Kullanıcı adı
+   * @param params {Object}
+   * @param params.p {Number} Sayfa sayısı
+   * @return {Promise}
+   */
+  async getMessage(nick, params = { p: 1 }) {
+    return await this.client.get(
+      `${this.client_version}/message/thread/nick/${nick}`,
+      { params }
+    )
   }
 
   /**
