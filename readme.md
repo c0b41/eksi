@@ -1,7 +1,7 @@
 ## Eskisozluk package
 
 ![npm](https://img.shields.io/npm/v/eksi.svg?style=flat-square)
-[![install size](https://packagephobia.now.sh/badge?p=eksi@1.2.1)](https://packagephobia.now.sh/result?p=eksi@1.2.1)
+[![install size](https://packagephobia.now.sh/badge?p=eksi@1.3.1)](https://packagephobia.now.sh/result?p=eksi@1.3.1)
 
 
 Eksi sözlüğün private api'sini kullanmak isteyenler için yazılmış node paketi.
@@ -12,7 +12,7 @@ yarn add eksi
 
 Browser için 
 
-```https://unpkg.com/eksi@1.2.1/dist/index.js```
+```https://unpkg.com/eksi@1.3.1/dist/index.js```
 
 Kullanım ve methodlar için
 
