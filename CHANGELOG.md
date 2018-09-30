@@ -7,3 +7,11 @@
 - setUserBlock, setUserUnblock, setUserTopicsBlock, setUserTopicsUnblock, setUserFollow, setUserUnfollow, getMessage methodları eklendi
 
 - getMyMessages methodu adı değiştirilerek getMessages yapıldı.
+
+
+## [1.2.1] - 2018-09-24
+
+### Değişiklikler
+
+- getMyUnreadMessagesCount, getMyUnreadTopicsCount methodları eklendi
+
