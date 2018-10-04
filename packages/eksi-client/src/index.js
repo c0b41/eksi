@@ -89,6 +89,19 @@ class EksiClient {
   async setRefreshAccessToken() {}
 
   /**
+   * Entry'e erişmek için
+   * @async
+   * @params entry_id {Number} Entry id
+   * @param params {Object}
+   * @return {Promise}
+   */
+  async getEntry(entry_id, params = {}) {
+    return await this.client.get(`${this.client_version}/entry/${entry_id}`, {
+      params
+    })
+  }
+
+  /**
    * Kendinize ait entryleri erişmek için
    * @async
    * @param params {Object}
@@ -127,6 +140,102 @@ class EksiClient {
     return await this.client.get(`${this.client_version}/user/${nick}`, {
       params
     })
+  }
+
+  /**
+   * Konu takip et
+   * @async
+   * @param topic_id {Number} Konu id
+   * @param params {Object}
+   * @return {Promise}
+   */
+  async setTopicFollow(topic_id, params = {}) {
+    return await this.client.get(
+      `${this.client_version}/topic/follow/${topic_id}`,
+      {
+        params
+      }
+    )
+  }
+
+  /**
+   * Konu takibi bırakma
+   * @async
+   * @param topic_id {Number} Konu id
+   * @param params {Object}
+   * @return {Promise}
+   */
+  async setTopicUnfollow(topic_id, params = {}) {
+    return await this.client.get(
+      `${this.client_version}/topic/unfollow/${topic_id}`,
+      {
+        params
+      }
+    )
+  }
+
+  /**
+   * Entry Upvote
+   * @async
+   * @param entry_id {Number} Entry id
+   * @param params {Object}
+   * @return {Promise}
+   */
+  async setEntryUpvote(entry_id, params = {}) {
+    return await this.client.post(
+      `${this.client_version}/entry/vote/${entry_id}/1`,
+      {
+        params
+      }
+    )
+  }
+
+  /**
+   * Entry Downvote
+   * @async
+   * @param entry_id {Number} Entry id
+   * @param params {Object}
+   * @return {Promise}
+   */
+  async setEntryDownvote(entry_id, params = {}) {
+    return await this.client.post(
+      `${this.client_version}/entry/vote/${entry_id}/-1`,
+      {
+        params
+      }
+    )
+  }
+
+  /**
+   * Entry Favorite
+   * @async
+   * @param entry_id {Number} Entry id
+   * @param params {Object}
+   * @return {Promise}
+   */
+  async setEntryFavorite(entry_id, params = {}) {
+    return await this.client.post(
+      `${this.client_version}/entry/${entry_id}/favorite`,
+      {
+        params
+      }
+    )
+  }
+
+  /**
+   * Entry Unfavorite
+   * @async
+   * @param entry_id {Number} Entry id
+   * @param params {Object}
+   * @return {Promise}
+   */
+  async setEntryUnfavorite(entry_id, params = {}) {
+    return await this.client.post(
+      `${this.client_version}/entry/${entry_id}/unfavorite`,
+      {
+        params
+      }
+    )
   }
 
   /**
@@ -261,6 +370,19 @@ class EksiClient {
   }
 
   /**
+   * Takip ettiğiniz konuların listesi için
+   * @async
+   * @param params {Object}
+   * @param params.p {Number} Sayfa sayısı
+   * @return {Promise}
+   */
+  async getEvents(params = { p: 1 }) {
+    return await this.client.get(`${this.client_version}/index/olay`, {
+      params
+    })
+  }
+
+  /**
    * Mesajı getirmek için
    * @async
    * @param nick {String} Kullanıcı adı
@@ -384,7 +506,7 @@ class EksiClient {
   }
 
   /**
-   * Ekşi sözlük konu başlıkları
+   * Ekşi sözlük kanalları
    * @async
    * @param {Object} params - ##
    * @return {Promise}
@@ -396,9 +518,11 @@ class EksiClient {
   }
 
   /**
-   * Ekşi sözlük başlıklara ait entryler için
+   * Ekşi sözlük Kanallarına ait konuları getirmek için
    * @async
+   * @param name {String} Kanal Adı
    * @param {Object} params - ##
+   * @param {Object} params.p - Sayfa sayısı
    * @return {Promise}
    */
   async getChannel(name, params = { p: 1 }) {
