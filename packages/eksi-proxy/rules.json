@@ -1,9 +1,0 @@
-{
-  "rules": [
-    {
-      "pathname": "/**",
-      "method": ["GET", "POST", "OPTIONS"],
-      "dest": "https://api.eksisozluk.com"
-    }
-  ]
-}
