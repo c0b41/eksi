@@ -1,19 +1,24 @@
 {
-    "presets": [
-        [
-	        "env",
-	        {
-	            "targets": {
-					"browser": "last 2 versions"
-				}
-			}
-	    ]
-    ],
-	"plugins": ["add-module-exports", 
-		[ "transform-runtime",
-			{
-			"regenerator": true
-			}
-		]
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "browsers": "last 2 versions"
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    "add-module-exports",
+    [
+		"@babel/plugin-transform-runtime",
+		{
+			"corejs": false,
+			"helpers": false,
+			"regenerator": true,
+			"useESModules": false
+		}
 	]
+  ]
 }
