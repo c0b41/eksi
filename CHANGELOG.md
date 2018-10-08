@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.5.1] - 2018-10-7
+
+### Değişiklikler
+
+- Bağımlılıklar güncellendi.Babel 7!
+
 ## [1.4.1] - 2018-10-4
 
 ### Değişiklikler

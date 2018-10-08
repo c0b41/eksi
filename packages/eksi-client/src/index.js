@@ -91,7 +91,7 @@ class EksiClient {
   /**
    * Entry'e erişmek için
    * @async
-   * @params entry_id {Number} Entry id
+   * @param entry_id {Number} Entry id
    * @param params {Object}
    * @return {Promise}
    */
@@ -426,6 +426,7 @@ class EksiClient {
   /**
    * Konuya bugün girilen entrylere erişmek için
    * @async
+   * @param topic_id {Number} konu id
    * @param params {Object}
    * @param params.p {Number} Sayfa sayısı
    * @return {Promise}
@@ -441,6 +442,7 @@ class EksiClient {
   /**
    * Konuya girilen entrylere erişmek için
    * @async
+   * @param topic_id {Number} konu id
    * @param params {Object}
    * @param params.p {Number} Sayfa sayısı
    * @param params.day {String} Tarih
@@ -495,7 +497,8 @@ class EksiClient {
   /**
    * Takip ettiğiniz yazarların favorilediği entryler
    * @async
-   * @param {Object} params - ##
+   * @param params {Object}
+   * @param params.p {Number} Sayfa sayısı
    * @return {Promise}
    */
   async getMyBuddysFavorites(params = { p: 1 }) {
@@ -508,7 +511,8 @@ class EksiClient {
   /**
    * Ekşi sözlük kanalları
    * @async
-   * @param {Object} params - ##
+   * @param params {Object}
+   * @param params.p {Number} Sayfa sayısı
    * @return {Promise}
    */
   async getChannels(params = {}) {
@@ -521,8 +525,8 @@ class EksiClient {
    * Ekşi sözlük Kanallarına ait konuları getirmek için
    * @async
    * @param name {String} Kanal Adı
-   * @param {Object} params - ##
-   * @param {Object} params.p - Sayfa sayısı
+   * @param params {Object}
+   * @param params.p {Number} Sayfa sayısı
    * @return {Promise}
    */
   async getChannel(name, params = { p: 1 }) {
@@ -533,7 +537,7 @@ class EksiClient {
   }
 
   /**
-   *
+   * Ekşi sözlük autocomplete
    * @async
    * @param query {String}  Aranan kelime
    * @return {Promise}
