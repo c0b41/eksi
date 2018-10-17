@@ -1,5 +1,11 @@
 # Change Log
 
+## [1.6.1] - 2018-10-17
+
+### Değişiklikler
+
+- `createEntry`, `editEntry` ve `deleteEntry` methodları eklendi.
+
 ## [1.5.1] - 2018-10-7
 
 ### Değişiklikler

@@ -1,6 +1,6 @@
 {
   "name": "eksi",
-  "version": "1.5.1",
+  "version": "1.6.1",
   "main": "./dist",
   "scripts": {
     "prepublishOnly": "npm run build",

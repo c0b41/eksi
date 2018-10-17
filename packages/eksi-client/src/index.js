@@ -143,6 +143,53 @@ class EksiClient {
   }
 
   /**
+   * Konu yada Entry oluşturma
+   * @async
+   * @param params {Object}
+   * @param params.Title {String} konu başlığı
+   * @param params.Content {String} entry içeriği
+   * @param params.AddAsHidden {Boolean} entry durumu
+   * @return {Promise}
+   */
+  async createEntry(params = {}) {
+    return await this.client.post(`${this.client_version}/entry/add`, {
+      params
+    })
+  }
+
+  /**
+   *  Entry düzenleme
+   * @async
+   * @param params {Object}
+   * @param params.Id {Number} entry id
+   * @param params.Title {String} konu başlığı
+   * @param params.Content {String} entry içeriği
+   * @param params.AddAsHidden {Boolean} entry durumu
+   * @return {Promise}
+   */
+  async editEntry(params = {}) {
+    return await this.client.post(`${this.client_version}/entry/edit`, {
+      params
+    })
+  }
+
+  /**
+   *  Entry düzenleme
+   * @async
+   * @param entry_id {Number}
+   * @param params {Object}
+   * @return {Promise}
+   */
+  async deleteEntry(entry_id, params = {}) {
+    return await this.client.get(
+      `${this.client_version}/entry/delete/${entry_id}`,
+      {
+        params
+      }
+    )
+  }
+
+  /**
    * Konu takip et
    * @async
    * @param topic_id {Number} Konu id
