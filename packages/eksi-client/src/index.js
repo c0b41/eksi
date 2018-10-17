@@ -174,7 +174,7 @@ class EksiClient {
   }
 
   /**
-   *  Entry düzenleme
+   *  Entry kaldırmak
    * @async
    * @param entry_id {Number}
    * @param params {Object}
